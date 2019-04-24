@@ -3,6 +3,10 @@ from __future__ import print_function
 
 import sys
 sys.path.append('./')
+# 强制使用CPU训练
+import os
+os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"  
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
 
 import prettytensor as pt
 import tensorflow as tf
